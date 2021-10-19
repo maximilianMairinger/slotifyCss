@@ -1,10 +1,12 @@
 {
   "name": "slotify-css",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Wrap all applicable selectors of an css sheet into ::slotted brackets.",
   "main": "./app/dist/esm/slotifyCss.js",
   "types": "./app/dist/esm/slotifyCss.d.ts",
-  "bin": "./app/dist/esm/cli/slotifyCss-cli.js",
+  "bin": {
+    "slotify-css": "app/dist/esm/cli/slotifyCss-cli.js"
+  },
   "exports": {
     "node": {
       "import": "./app/dist/esm/slotifyCss.js",
