@@ -1,6 +1,6 @@
 # Slotify css
 
-Wrap all applicable selectors of an css sheet into ::slotted brackets. With a focus on being fast and having a small bundlesize.
+Wrap all applicable selectors of an css sheet into ::slotted brackets. With a focus on being fast and having a small bundlesize ([3.6kB](https://bundlephobia.com/package/slotify-css@1.0.0)).
 
 ## Limitations / Prerequestites
 
