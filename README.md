@@ -1,8 +1,10 @@
 # Slotify css
 
-Wrap all applicable selectors of an css sheet into ::slotted brackets.
+Tiny library to wrap all applicable selectors of an css sheet into ::slotted brackets.
 
-> Please note that Slotify css is currently under development and not yet suited for production
+## Limitations / Prerequestites
+
+This library is intended to be used as a on the fly compiler running on the frontend. Hence bundle size is of primary concern, not creating a 100% spec complient compiler nor it being particulary lenient on syntax variations. As such it assumes the input css to be precompiled, or at least without unnecenary spaces between css combinators (e.g.: not `div > p`) and stripped of comments. Additionally it carries all [caveats](https://www.npmjs.com/package/css-simple-parser/#caveats) of the used lexer `css-simple-parser` with, which are only partially solveable by precompiling.
 
 ## Installation
 
@@ -17,7 +19,7 @@ Wrap all applicable selectors of an css sheet into ::slotted brackets.
 ```ts
 import slotifyCss from "slotify-css"
 
-slotifyCss()
+const slottedCss = slotifyCss(sourceCss)
 ```
 
 ## Contribute

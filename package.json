@@ -30,12 +30,12 @@
     "url": "git+https://github.com/maximilianMairinger/slotifyCss.git"
   },
   "keywords": [
-  "slotted",
-  "slotify",
-  "css",
-  "selector",
-  "slot"
-],
+    "slotted",
+    "slotify",
+    "css",
+    "selector",
+    "slot"
+  ],
   "author": "Maximilian Mairinger",
   "license": "ISC",
   "bugs": {
@@ -57,6 +57,6 @@
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
-    "req-package-json": "^2.0.0"
+    "css-simple-parser": "^2.0.1"
   }
 }
