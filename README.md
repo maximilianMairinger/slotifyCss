@@ -26,14 +26,12 @@ const slottedCss = slotifyCss(sourceCss)
 
 <table>
 <tr>
-<th align="center">
-<img width="441" height="1">
+<th>
 <h3 align="center">
 Input
 </h3>
 </th>
-<th align="center">
-<img width="441" height="1">
+<th>
 <h3 align="center"> 
 Output
 </h3>
@@ -46,6 +44,16 @@ Output
 div h1 {
   color: red;
 }
+
+:host(.focus-within:not(.valid)) div h1 {
+  color: red;
+}
+
+@media (max-with: 700px) {
+  div>h1,:root h1.big~p {
+    color: red;
+  }
+}
 ```
   
 </td>
@@ -55,49 +63,11 @@ div h1 {
 ::slotted(div h1) {
   color: red;
 }
-```
-  
-</td>
-</tr>
 
-
-<tr>
-<td>
-
-```css
-:host(.focus-within:not(.valid)) div h1 {
-  color: red;
-}
-```
-  
-</td>
-<td>
-
-```css
 :host(.focus-within:not(.valid)) ::slotted(div h1) {
   color: red;
 }
-```
-  
-</td>
-</tr>
 
-<tr>
-<td>
-
-```css
-@media (max-with: 700px) {
-  div>h1,:root h1.big~p {
-    color: red;
-  }
-}
-
-```
-  
-</td>
-<td>
-
-```css
 @media (max-with: 700px) {
   ::slotted(div>h1),:root ::slotted(h1.big~p) {
     color: red;
@@ -107,6 +77,7 @@ div h1 {
   
 </td>
 </tr>
+
 
 
 </table>
