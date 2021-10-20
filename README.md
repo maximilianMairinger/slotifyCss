@@ -45,7 +45,7 @@ div h1 {
   color: red;
 }
 
-:host(.focus-within:not(.valid)) div h1 {
+:host(:focus-within:not(.valid)) div h1 {
   color: red;
 }
 
@@ -64,7 +64,7 @@ div h1 {
   color: red;
 }
 
-:host(.focus-within:not(.valid)) ::slotted(div h1) {
+:host(:focus-within:not(.valid)) ::slotted(div h1) {
   color: red;
 }
 
