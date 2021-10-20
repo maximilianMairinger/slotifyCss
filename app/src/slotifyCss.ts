@@ -1,24 +1,24 @@
 import * as CssParser from "css-simple-parser";
 
 
-export function slotifyCss(cssSource: string) {
-  const joinRegex = /\ |>|~|\+/;
-  const groupingSelectorString = ","
-  const hostString = ":host"
-  const slottedOpenString = "::slotted("
-  const slottedCloseString = ")"
+const joinRegex = /\ |>|~|\+/;
+const groupingSelectorString = ","
+const pseudoString = ":"
+const slottedOpenString = "::slotted("
+const slottedCloseString = ")"
 
-  
+export function slotifyCss(cssSource: string) {
   const ast = CssParser.parse(cssSource);
   CssParser.traverse(ast, (node) => {
-    if (node.selector.startsWith("@")) return
+    const sel = node.selector.trim()
+    if (sel.startsWith("@")) return
 
-    const selectors = node.selector.trim().split(groupingSelectorString);
+    const selectors = sel.split(groupingSelectorString);
     for (let i = 0; i < selectors.length; i++) {
       const selector = selectors[i]
       
-      const host = selector.startsWith(hostString)
-      if (host) {
+      const pseudo = selector.startsWith(pseudoString)
+      if (pseudo) {
         const match = (joinRegex.exec(selector) || {index: selector.length}).index + 1
         const subHost = selector.slice(match)
         if (subHost !== "") selectors[i] = selector.slice(0, match) + slottedOpenString + subHost + slottedCloseString
