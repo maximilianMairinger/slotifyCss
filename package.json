@@ -4,9 +4,6 @@
   "description": "Wrap all applicable selectors of an css sheet into ::slotted brackets.",
   "main": "./app/dist/esm/slotifyCss.js",
   "types": "./app/dist/esm/slotifyCss.d.ts",
-  "bin": {
-    "slotify-css": "app/dist/esm/cli/slotifyCss-cli.js"
-  },
   "exports": {
     "node": {
       "import": "./app/dist/esm/slotifyCss.js",
